@@ -48,10 +48,10 @@ const Dashboard = () => {
       </div>
 
       {/* Navigation */}
-      <div className="w-11/12 md:w-3/4 bg-white rounded-full flex justify-around items-center text-sm shadow-md mb-8">
-        <button className="py-3 px-8 font-medium text-gray-800 hover:text-orange-500">New Game</button>
-        <button className="py-3 px-8 font-medium text-gray-800 hover:text-orange-500">High Scores</button>
-        <button className="py-3 px-8 font-medium text-gray-800 hover:text-orange-500">Profile</button>
+      <div className="w-11/12 md:w-3/4 bg-gray-100 rounded-full flex justify-around items-center text-sm shadow-md mb-8">
+        <button className="w-1/3 py-2 bg-white rounded-full p-4 text-gray-800">New Game</button>
+        <button className="w-1/3 py-2 rounded-full text-gray-800">High Scores</button>
+        <button className="w-1/3 py-2 rounded-full text-gray-800">Profile</button>
       </div>
 
       {/* Difficulty Section */}
