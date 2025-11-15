@@ -1,12 +1,12 @@
 import React from "react";
-// import Navbar from "../components/common/navbar";
+import Header from "../components/common/header";
 import Footer from "../components/common/footer";
 import HighScore from "../components/layout/highscore";
 
 const HighScorePage = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Header />
       <HighScore />
       <Footer />
     </div>

@@ -1,9 +1,10 @@
-"use client";
 import React from "react";
-import { FiLogOut } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import { FaBolt, FaBullseye, FaTrophy } from "react-icons/fa";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const levels = [
     {
       name: "Easy",
@@ -32,49 +33,59 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-400 to-orange-500 flex flex-col items-center py-10">
-      {/* Header */}
-      <div className="bg-orange-400 w-11/12 md:w-3/4 rounded-xl shadow-lg p-6 flex justify-between items-center text-white mb-6">
-        <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
-            🍌 Banana Blitz
-          </h1>
-          <p className="text-sm">Welcome back, <span className="font-semibold">mpakithn!</span></p>
-        </div>
-        <button className="bg-white text-orange-600 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-gray-100">
-          <FiLogOut />
-          Logout
-        </button>
-      </div>
-
+    <div className="min-h-[75vh] bg-gradient-to-br from-yellow-400 to-orange-500 flex flex-col items-center py-10 font-arimo">
       {/* Navigation */}
-      <div className="w-11/12 md:w-3/4 bg-gray-100 rounded-full flex justify-around items-center text-sm shadow-md mb-8">
-        <button className="w-1/3 py-2 bg-white rounded-full p-4 text-gray-800">New Game</button>
-        <button className="w-1/3 py-2 rounded-full text-gray-800">High Scores</button>
-        <button className="w-1/3 py-2 rounded-full text-gray-800">Profile</button>
+      <div className="w-11/12 md:w-3/4 bg-gray-100 rounded-full flex justify-around items-center text-sm shadow-md mb-6 p-1">
+        <button
+          // onClick={() => navigate("/dashboard")}
+          className="w-1/3 py-2 rounded-full text-gray-800 bg-white shadow"
+        >
+          New Game
+        </button>
+        <button
+          onClick={() => navigate("/highscore")}
+          className="w-1/3 py-2 rounded-full text-gray-800"
+        >
+          High Scores
+        </button>
+        <button
+          onClick={() => navigate("/profile")}
+          className="w-1/3 py-2 rounded-full text-gray-800"
+        >
+          Profile
+        </button>
       </div>
 
       {/* Difficulty Section */}
       <div className="bg-white w-11/12 md:w-3/4 rounded-xl shadow-lg p-6">
-        <h2 className="text-lg font-semibold mb-1 text-gray-800">Choose Your Level</h2>
+        <h2 className="text-lg font-semibold mb-1 text-gray-800">
+          Choose Your Level
+        </h2>
         <p className="text-sm text-gray-500 mb-6">
           Select a difficulty level and test your puzzle-solving skills!
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
           {levels.map((level, index) => (
-            <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
-              <div className={`${level.color} flex justify-center items-center py-6`}>
+            <div
+              key={index}
+              className="border rounded-xl overflow-hidden shadow-sm"
+            >
+              <div
+                className={`${level.color} flex justify-center items-center py-6`}
+              >
                 {level.icon}
               </div>
               <div className="p-4 text-center">
                 <h3 className="font-semibold text-gray-800">{level.name}</h3>
                 <p className="text-sm text-gray-500 mb-4">{level.time}</p>
                 <p className="text-sm text-gray-600 mb-2">
-                  <span className="font-semibold">High Score:</span> {level.highScore}
+                  <span className="font-semibold">High Score:</span>{" "}
+                  {level.highScore}
                 </p>
                 <button
                   className={`${level.buttonColor} text-white font-medium px-4 py-2 w-full rounded-md transition`}
+                  onClick={() => navigate(`/game/${level.name.toLowerCase()}`)}
                 >
                   Play {level.name}
                 </button>

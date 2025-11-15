@@ -1,12 +1,12 @@
 import React from "react";
-// import Navbar from "../components/common/navbar";
+import Header from "../components/common/header";
 import Footer from "../components/common/footer";
 import Dashboard from "../components/layout/dashboard";
 
 const HomePage = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Header />
       <Dashboard />
       <Footer />
     </div>

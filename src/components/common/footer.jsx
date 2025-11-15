@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-yellow-400 text-gray-300 py-6 mt-20">
+    <footer className="bg-black border-t border-yellow-400 text-gray-300 h-[15vh] py-10 font-arimo">
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center space-y-2">
         {/* Logo / Name with Banana */}
         <div className="flex items-center space-x-2">
